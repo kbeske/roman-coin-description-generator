@@ -1,4 +1,13 @@
 export const peopleDescriptions = [
-  {label: 'hello', value: 'hey there'},
-  {label: 'whats up', value: 'duuuuude!'}
+  {label: 'placeholder', value: 'blah'},
+  {label: 'placeholder', value: 'blah'},
+  {label: 'placeholder', value: 'blah'},
+  {label: 'placeholder', value: 'blah'},
+  {label: 'placeholder', value: 'blah'},
+  {label: 'placeholder', value: 'blah'},
+  {label: 'placeholder', value: 'blah'},
+  {label: 'placeholder', value: 'blah'},
+  {label: 'placeholder', value: 'blah'},
+  {label: 'placeholder', value: 'blah'},
+  // {label: 'placeholder', value: 'blah'},
 ];
