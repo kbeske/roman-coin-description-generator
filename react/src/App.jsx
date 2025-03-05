@@ -1,33 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
+import Select from 'react-select';
+import { peopleDescriptions } from './peopleDescriptions';
+import { coinTypes } from './coinTypes';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [person, setPerson] = useState('');
+  const [coinType, setCoinType] = useState('');
+  const [grade, setGrade] = useState('');
+  const [flaws, setFlaws] = useState('');
+  const [description, setDescription] = useState('Hello, I am the description placeholder!');
+
+  const generateDescription = () => {
+    console.log(person.label)
+    console.log(coinType.label)
+
+    const desc = `${coinType.value}\n\n${person.value}`;
+    console.log(desc)
+    setDescription(desc);
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <h1>Roman Coin Description Generator</h1>
+      <div className='select'>
+        <Select
+          defaultValue={person}
+          onChange={setPerson}
+          options={peopleDescriptions}
+        />
+        <Select
+          defaultValue={coinType}
+          onChange={setCoinType}
+          options={coinTypes}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <button onClick={() => generateDescription()}>
+        Generate description
+      </button>
+      <div className='description'>
+        {description}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
