@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './App.css';
+import './App.scss';
 import Select from 'react-select';
 import { peopleDescriptions } from './peopleDescriptions';
 import { coinTypes } from './coinTypes';
