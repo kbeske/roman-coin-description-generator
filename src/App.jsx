@@ -117,6 +117,7 @@ function App() {
       </div>
       <div className='description'>
         {description}
+      </div>
     </div>
   )
 }
