@@ -15,9 +15,6 @@ function App() {
     'Use the select dropdowns above to choose the attributes of the coin you\'re looking at.  ' +
     'Then click the button to see a full description with the person, coin type, and more!  ' +
     'You\'ll need to add the obverse/reverse descriptions to the listing description separately.');
-  const [isCopied, setIsCopied] = useState(false);
-  const [copyButtonClass, setCopyButtonClass] = useState('copy-button');
-  const [copyButtonText, setCopyButtonText] = useState('Copy Description');
 
   const generateDescription = () => {
     var flawText = '';
@@ -47,24 +44,6 @@ function App() {
 
     setDescription(desc);
   }
-
-  const copyButtonOnClick = () => {
-    navigator.clipboard.writeText(description);
-    setIsCopied(true)
-  };
-
-  useEffect(() => {
-    if (isCopied) {
-      setCopyButtonClass('copy-button__copied');
-      setCopyButtonText('Copied!');
-      setTimeout(() => {
-        setIsCopied(false);
-      }, 1000);
-    } else {
-      setCopyButtonClass('copy-button');
-      setCopyButtonText('Copy Description');
-    }
-  }, [isCopied]);
 
   return (
     <div className="flex-gap">
@@ -107,12 +86,6 @@ function App() {
       <div className="button-container">
         <button onClick={() => generateDescription()}>
           Generate description
-        </button>
-        <button
-          className={copyButtonClass}
-          onClick={copyButtonOnClick}
-        >
-          {copyButtonText}
         </button>
       </div>
       <div className='description'>

@@ -22,21 +22,6 @@ button {
   } 
 }
 
-.copy-button {
-  @media only screen and (max-width: 600px) {
-    margin-top: 2rem;
-  } 
-
-  &__copied {
-    background-color: #549a9b;
-
-    /* todo: figure out why this isn't working with bem */
-    @media only screen and (max-width: 600px) {
-      margin-top: 2rem;
-    } 
-  }
-}
-
 .description {
   white-space: pre-line;
 }
